@@ -1,0 +1,81 @@
+{% extends "base-blog.html.twig" %}
+{% block content %}
+    <h1>Alexandra Gonzalez, mon blog</h1>
+    <h2>Les astuces informatiques</h2>
+    <div class="content">
+        <p>
+            Retrouvez dans cette rubrique des tutos et astuces sur plusieurs sujets concernant l'informatique. Il m'est arrivé de chercher
+            pendant des heures des solutions pour résoudre des dysfonctionnements. Une fois la solution trouvée, il m'a paru important de la noter 
+            j'ai pu lapour éviter de passer trop de temps la prochaine fois que la situation se représente.<br /><br />
+            Par ailleurs, vous trouverez également des petits développements personnels : module Drupal, Jquery ...     
+        </p>
+
+        {# bloc vignettes #}
+
+        <div class="vignettes">
+            <!-- DEBUT REA1 -->
+            <div class="theme">
+                <a href="{{ path('info-astuces_show', {'folder': 'cordova', 'slug':'cordova-theme'})}}" title="Accéder au thème Cordova">
+                    <h4>Cordova</h4>
+                    <p>Cordova est un framework de création d'applications mobile permettant de coder avec les technologies usuelles du web.
+                    </p>
+                    <img src="{{ asset('images/astucesInfo/cordova-logo.png') }}"/>
+                </a>  
+            </div>
+            <!-- FIN REA1 -->
+            <!-- DEBUT REA2 -->
+            <div class="theme">
+                <a href="#" title="Accéder au thème Symfony">
+                    <h4>Symfony</h4>
+                    <p>Symfony est un framework PHP. <br />
+                       C'est le framework utilisé pour réaliser ce site.
+                    </p>
+                    <img src="{{ asset('images/astucesInfo/symfony-logo.png') }}"/>
+                </a>
+            </div>  
+            <!-- FIN REA2 -->
+            <!-- DEBUT REA3 -->     
+            <div class="theme">
+                <a href="#" title="Accéder au thème Drupal">
+                    <h4>Drupal</h4>
+                    <p>Drupal est un framework de gestion de contenu (CMS), utilisant la technologie Symfony.
+                    </p>
+                     <img src="{{ asset('images/astucesInfo/drupal-logo.png') }}"/>
+                </a>
+            </div>
+            <!-- FIN REA3 -->
+           </div>    
+           <div class="vignettes">
+                <!-- DEBUT REA3 -->     
+                <div class="theme">
+                    <a href="#" title="Accéder au thème Drupal">
+                        <h4>Prestashop</h4>
+                        <p>Prestashop est un CMS spécialisé dans la gestion de boutiques en ligne. Sa programmation est faite en PHP et les 
+                           données doivent être stockées sur un serveur MySQL.
+                        </p>
+                         <img src="{{ asset('images/astucesInfo/prestashop-logo.png') }}"/>
+                    </a>
+                </div>
+                <!-- FIN REA3 -->
+                <!-- DEBUT REA3 -->     
+                <div class="theme">
+                    <a href="#" title="Accéder au thème Drupal">
+                        <h4>WordPress</h4>
+                        <p>WordPress est un CMS spécialisé dans la gestion contenu, à la base, il a été créé pour les blogs. Il utilise les tachnologies PHP et MySQL.
+                        </p>
+                         <img src="{{ asset('images/astucesInfo/wordpress-logo.png') }}"/>
+                    </a>
+                </div>
+                <!-- FIN REA3 -->
+                <!-- DEBUT REA3 -->     
+                <div class="theme">
+                    <a href="#" title="Accéder au thème Drupal">
+                        <h4>Divers</h4>
+                        <p>Vous trouverez ici des astuces divers en Jquery, PHP, JAVA..
+                        </p>
+                         <img src="{{ asset('images/astucesInfo/divers-code.png') }}"/>
+                    </a>
+                </div>
+           </div>
+    </div>
+{% endblock %}

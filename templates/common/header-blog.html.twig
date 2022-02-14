@@ -1,0 +1,23 @@
+<nav>
+	<div id="menu-burger" >
+        <a href="#">&#9776;</a>
+        <span>Menu</span>
+    </div>
+    <div id="menu-mobile" class="overlay">
+        <a href="#" class="closebtn closeNav">&times;</a>
+        <div class="overlay-content">
+            <a href="{{ path('home')}}" class="closeNav" title="Retour site CV">Retour site CV</a>
+            <a href="{{ path('blog')}}" title="Accueil blog">Accueil blog</a>
+            <hr/>
+            <a href="{{ path('info-astuces')}}"  class="closeNav" title="Astuces informatiques ">Info astuces</a>
+            <a href="{{ path('impression_3D')}}"  class="closeNav" title="Impression 3D">Impression 3D</a>
+            <a href="{{ path('electromobilite')}}"  class="closeNav" title="Electromobilité">Electromobilité</a>
+        </div>
+    </div>
+    <ul>
+        <li><a href="{{ path('home')}}" title="Retour site CV">Retour site CV</a></li>
+        <li><a href="{{ path('info-astuces')}}" title="Astuces informatiques">Info astuces</a></li>
+        <li><a href="{{ path('impression_3D')}}" title="Impression 3D">Impression 3D</a></li>
+        <li><a href="{{ path('electromobilite')}}" title="Electomobilité">Electomobilité</a></li>
+    </ul>
+</nav>

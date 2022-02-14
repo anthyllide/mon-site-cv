@@ -1,0 +1,28 @@
+<nav>
+    <div id="menu-burger" >
+        <a href="#">&#9776;</a>
+        <a href="{{ path('home') }}"><img alt="logo développeur web alexandra gonzalez" src="{{ asset("images/logo.jpg") }}"/></a>
+    </div>
+    <div id="menu-mobile" class="overlay">
+        <a href="#" class="closebtn closeNav">&times;</a>
+        <div class="overlay-content">
+            <a href="{{ path('home')}}#qui"  class="closeNav" title="Freelancing">Freelancing</a>
+            <a href="{{ path('home')}}#cv"  class="closeNav" title="Mon CV">Mon CV</a>
+            <a href="{{ path('home')}}#contact"  class="closeNav" title="Contact">Contact</a>
+            <a href="{{ path('blog')}}"  class="closeNav" title="Mon blog">Mon blog</a>
+        </div>
+    </div>
+    <ul>
+        <!-- <li id="home"><a title="accueil" class="active" href="{{ path('home')}}"><i class="fas fa-home"></i></a></li> -->
+        <li id="home"><a title="accueil" class="active" href="{{ path('home')}}"><img alt="logo développeur web alexandra gonzalez" src="{{ asset("images/logo.jpg") }}"/></a></li>
+        <li><a href="{{ path('home')}}#qui" title="Freelancing">Freelancing</a>
+            <ul>
+                <li>Technologies utilisées</li>
+                <li>Tarifs</li>
+            </ul>
+        </li>
+        <li><a href="{{ path('home')}}#cv" title="Mon CV">Mon CV</a></li>
+        <li><a href="{{ path('home')}}#contact" title="Contact">Contact</a></li>
+        <li><a href="{{ path('blog')}}" title="Mon blog">Mon blog</a></li>
+    </ul>
+</nav>

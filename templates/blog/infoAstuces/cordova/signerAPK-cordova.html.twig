@@ -1,0 +1,60 @@
+{% extends "base-blog.html.twig" %}
+{% block content %}
+    <h1>Alexandra Gonzalez, astuce informatique - Cordova</h1>
+    <h2>Comment publier une application mobile Cordova sur le Play Store ?</h2>
+    <div class="content">
+        <p><strong>Remarque</strong> : S'il s'agit d'une mise à jour, n'oubliez pas de modifier la version dans le fichier config.xml avant de compiler.<br/><br /></p>
+        
+        <p>Pour être intégré au Play Store, le fichier APK doit obligatoirement être signé à partir d'une clé de chiffrement. Ensuite, on génère l'APK, on optimise 
+        le fichier, puis enfin on le dépose sur votre Google Play Console. Ces étapes seront décrites en détail dans cet article.</p>
+        <h3>Générer une clé dechiffrement</h3>
+        <p>
+           La clé de chiffrement ne sera générée qu'une seule fois dans la vie de l'application mobile car elle est valable 10 000 jours !<br />
+           On utilise l'utilitaire "keytool". Ouvrez la console et mettez vous à la racine de votre projet, puis saisissez les instructions
+           suivantes.
+        </p>
+        <pre><code class="lang-bash">
+               $ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
+            </code></pre>
+        <p>
+        Cette commande permet de générer une clé (my-release-key.keystore) valide 10000 jours.<br />
+        L’outil demandera un mot de passe pour protéger la clé ainsi que quelques informations supplémentaires :<br />
+        </p>
+        <ul>
+            <li>nom et prénom</li>
+            <li>nom de l’unité organisationnelle</li>
+            <li>nom de l’unité organisationnelle</li>
+            <li>nom de l’entreprise</li>
+            <li>ville de résidence</li>
+            <li>état</li>
+            <li>code pays sur deux lettres</li>
+        </ul>
+        <p>
+         <br />
+        Une fois le processus terminé, il faut bien archiver la clé (et son mot de passe) car elle sera nécessaire pour
+        signer tous les futurs apk de mise à jour de l’application.
+        </p>
+        <p>Il faut maintenant construire son apk en mode release. Depuis le dossier du projet, exécutez :</p>
+        <pre><code class="lang-bash">
+            $ cordova build --release
+        </code></pre>
+        <p>
+        Le fichier apk généré est disponible dans le répertoire suivant : platforms\android\app\build\outputs\apk\release . <br />
+        Le fichier se nomme quelque chose comme "app-release-unsigned.apk". Déplacez-le à la racine du projet, là où se trouve votre clé de chiffrement.
+        </p>
+        <p>Signez l'APK avec la commande suivante :</p>
+        <pre><code class="lang-bash">
+        jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore app-release-unsigned.apk alias_name
+        </code></pre>
+        <p>Enfin, il faut « aligner » l’apk, c’est à dire passer par une phase d’optimisation en utilisant la commande suivante :</p>
+        <pre><code class="lang-bash">
+        C:\Users\jiyou\AppData\Local\Android\sdk\build-tools\25.0.1\zipalign -v 4 android-release-unsigned.apk android-release-signed.apk
+        </code></pre>
+        <p><strong>Remarque</strong> : Pour obtenir le chemin de l'outil "Zipalign", allez le chercher depuis votre explorateur de fichier car la version change régulièrement !</p>
+        <p>L'apk est prêt pour être publié sur le Play Store.<br /><br />
+        </p>
+        
+        <script>hljs.initHighlightingOnLoad();</script>
+    </div>
+    
+{% endblock %}

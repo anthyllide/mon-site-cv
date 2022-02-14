@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+{% block content %}
+<h1>Alexandra Gonzalez, développeuse web</h1>
+<div class="content">
+    {% include ("page_CV/qui.html.twig") %}
+</div>
+<div class="content">
+    {% include ("page_CV/realisations.html.twig") %}
+</div>
+<div class="content">
+    {% include ("page_CV/cv.html.twig") %}
+</div>
+<div class="content">
+    <h2 id="contact">Me contacter</h2>
+    <p>Si vous avez des questions, n'hésitez pas à m'écrire. Je vous répondrai dans les plus brefs délais.</p>
+            {{ render(controller('App\\Controller\\ContactController::contactAction',{ 'max': 3 })) }}
+</div>
+{% endblock %}

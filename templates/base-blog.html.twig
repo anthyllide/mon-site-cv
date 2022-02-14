@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
+        <title>{% block title %}Alexandra Gonzalez, développeur web à Chambéry{% endblock %}</title>
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('css/mobile-style.css') }}" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <script type="text/javascript" src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+         <script type="text/javascript" src="{{ asset('js/jquery.flip.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/animation.js') }}"></script>
+        <link rel="stylesheet" href="{{ asset('css/highlight/styles/atom-one-dark.css') }}" />
+        <script src="{{ asset('js/highlight.pack.js') }}"></script>
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127040492-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-127040492-1');
+        </script>
+
+    </head>
+    <body>
+        <div id="wrapper-blog">
+            <header>
+                {% include ("common/header-blog.html.twig") %}
+            </header>
+            <section>
+                {% block content %}
+                {% endblock %}
+            </section>
+            <footer>
+                {% include ("common/footer.html.twig") %}
+            </footer>
+        </div>
+    </body>
+</html>

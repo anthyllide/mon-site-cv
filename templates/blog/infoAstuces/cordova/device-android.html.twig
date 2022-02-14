@@ -1,0 +1,44 @@
+{% extends "base-blog.html.twig" %}
+{% block content %}
+	<h1>Alexandra Gonzalez, astuce informatique - Cordova</h1>
+        <h2>Comment utiliser son smartphone Android pour tester ses applis Cordova ?</h2>
+        <div class="content">
+            <h3>1°) Activer le mode développeur de votre smartphone</h3>
+            <p>Pour activer le mode développeur de votre smartphone, ouvrez les paramétres de votre système Android, puis cliquez sur "A propos du téléphone"
+            et repérez le "numéro de build", puis cliquez 7 fois dessus.</p>
+            <figure>
+                <img alt="alexandra gonzalez développeur web - mode développeur android" src="{{ asset('images/astucesInfo/debogage_usb_04.png') }}"/>
+            </figure>
+            <p>Vous obtenez un nouveau menu intitulé "Options pour les développeurs" depuis le menu "Système" des paramétres.</p>
+            <figure>
+                <img alt="alexandra gonzalez développeur web - accéder options pour les développeurs android" src="{{ asset('images/astucesInfo/debogage_usb_03.png') }}"/>/>
+            </figure>
+            
+            <h3>2°) Activer le mode débogage USB</h3>
+            <p>Pour activer le mode débogage lorsque un cordon USB est branché au téléphone, cliquez sur "Options pour les développeurs" et balayer la page vers le bas jusqu'à ce vous trouviez le menu 
+            débogage USB. Activez-le en basculant sur la droite l'interrupteur.</p>
+            <figure>
+                <img alt="alexandra gonzalez développeur web - activer options pour les développeurs android" src="{{ asset('images/astucesInfo/debogage_usb_02.png') }}"/> />
+            </figure>
+            
+            <h3>3°)Brancher votre smartphone au PC</h3>
+            <p>Vous pouvez maintenant brancher votre smartphone à votre PC via un cordon USB.</p>
+            
+            <h3>4°) Excécuter votre application Cordova sous Android</h3>
+            <p>
+                Pour cela, exécutez la commande suivante depuis la racine de votre projet Cordova.
+            </p>
+            <pre>
+                <code class="lang-bash">
+                    $ cordova run android
+                </code>
+            </pre>
+            <p>
+                La fenêtre suivante s'ouvre sur votre smartphone. Autorisez le débogage et votre appli va s'afficher sur votre smartphone.
+            </p>
+             <figure>
+                 <img alt="alexandra gonzalez développeur web - autoriser le débogage USB android" src="{{ asset('images/astucesInfo/debogage_usb_01.png') }}"/>
+             </figure>
+             <script>hljs.initHighlightingOnLoad();</script>
+        </div>
+{% endblock %}

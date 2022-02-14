@@ -1,0 +1,25 @@
+{{ form_start(form,{'action': path('contact'), 'attr': {'class': 'form-horizontal'}}) }}
+{{ form_errors(form) }}
+ <div id="contact">
+     
+    <div id="identity">
+        {{ form_row(form.last_name, {'attr':{'placeholder':'Votre nom'}}) }}
+        {{ form_row(form.first_name, {'attr':{'placeholder':'Votre prénom'}}) }}
+        {{ form_row(form.email, {'attr':{'placeholder':'Votre email'}}) }}
+    </div>
+    <div id="message">
+        {{ form_row(form.subject, {'attr':{'placeholder':'Sujet'}}) }}
+        {{ form_row(form.message, {'attr':{'placeholder':'Votre message'}}) }}
+        {% if message is defined %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endif %}
+        <div class="g-recaptcha" data-sitekey="6Lf4uW4cAAAAAEhG674PC9FFqspoYIBO-I1zYNON"></div>
+        {{ form_row(form.save) }}
+    </div>
+ </div>
+
+{{ form_rest(form) }}
+
+{{ form_end(form)}}

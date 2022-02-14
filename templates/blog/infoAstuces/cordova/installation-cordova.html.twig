@@ -1,0 +1,156 @@
+{% extends "base-blog.html.twig" %}
+{% block content %}
+	<h1>Alexandra Gonzalez, astuce informatique - Cordova</h1>
+	<h2>Comment installer Cordova sous Windows 10 ?</h2>
+	<div class="content">
+            <p>
+                Cordova est un framework de développement mobile open-source développé par Apache et permettant d'utiliser 
+                les langages du web. <br /><br />
+                Avant de télécharger Cordova, il est nécessaire de procéder à l'installation de plusieurs utilitaires et à l'ajout de quelques 
+                variables d'environnement Windows. Suivez le guide ci-dessous !
+            </p>
+            <h3>1°) Installation de Node.JS</h3>
+            <p>
+                Pour installer Cordova, nous devons préalablement installer NPM (gestionnaire de gestion de paquets). Pour cela, on va installer
+                Node.JS qui intégre NPM.<br /><br />
+                Pour télécharger Node.JS, cliquez sur <a title="Accéder au téléchargement de Node.JS" href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a>.<br /><br />
+                Choisissez la version LTS (Long-Terme Support) la plus récente. Téléchargez Node.JS
+            </p>
+            <figure>
+                <img style="border: #000000 solid 2px" alt="node.JS download" src="{{ asset('images/astucesInfo/nodeJS-download.jpg') }}"  />
+            </figure>
+            <p>Pendant l'installation, assurez-vous que l'ensemble "Add To Path" soit bien sélectionner. Cela permet d'ajouter npm dans les 
+            variables d'environnement et d'avoir accès à npm depuis n'importe quel répertoire.</p>
+            <figure>
+                <img alt="node.JS install" src="{{ asset('images/astucesInfo/nodeJS-install.jpg') }}"  />
+            </figure>
+            <p>Une fois Node.JS installé, tapez depuis la console Windows la commande "npm". Si vous obtenez l'écran suivant, c'est que npm est 
+            bien installé.</p>
+            <figure>
+                <img alt="npm test" src="{{ asset('images/astucesInfo/npm-test.jpg') }}"  />
+            </figure>
+            
+            <h3>2°) Installation de Cordova</h3>
+            <p>Dans la console Windows, tapez la commande <strong>npm install -g cordova</strong>.<br /><br />
+                Une fois Cordova installée, tapez dans la console la commande <strong>cordova -version</strong>. Si Cordova est bien installé,
+                le numéro de version du framework va s'afficher.<br />
+                Dans l'exemple ci-dessous, la version de Cordova est la 10.0.0 .
+            </p>
+            <figure>
+                <img alt="cordova version" src="{{ asset('images/astucesInfo/cordova-version.jpg') }}"  />
+            </figure>
+            <p>Une fois Cordova installé, il faut installer les SDK (Software Development Kit) nécessaires pour les plateformes pour lesquelles
+            vous souhaitez développer votre application.<br /><br />
+            Pour IOS, il est nécessaire d'avoir un Mac et d'installer XCode. <br /><br />
+            Je vais détailler ici les SDK pour Android et c'est à partir de là que les "choses se compliquent" !
+            </p>
+            
+            <h3>3°) Installation des SDK pour la plateforme Android</h3>
+            <h4> 1 - Installation du Java Developpement Kit</h4>
+            
+            <p>Rendez-vous sur le site de Oracle : <a href="https://www.oracle.com/fr/java/technologies/javase/javase-jdk8-downloads.html">https://www.oracle.com/fr/java/technologies/javase/javase-jdk8-downloads.html</a>
+            <br /><br />
+            <strong>ATTENTION :</strong> Téléchargez bien Java SE Development Kit (voir capture d'écran ci-dessous). Si vous téléchargez Java SE tout court, 
+            la plateforme Android ne fonctionnera pas avec Cordova.<br /><br />
+            Choisissez l'exécutif correspondant à votre OS. Pour ma part, j'ai windows 10 64bit.<br /><br />
+            <strong>IMPORTANT : </strong>Depuis avril 2019, vous devez avoir un compte Oracle pour accéder au téléchargement de JAVA SE Developpement Kit, mais il reste
+            gratuit. Si vous n'avez pas de compte Oracle, créez-en un. 
+            </p>
+            <figure>
+                <img style="border: #000000 solid 2px" alt="Java SE download" src="{{ asset('images/astucesInfo/javaSE-download.jpg') }}"  />
+            </figure>
+            <p>Une fois JAVA SE Developpement kit installé, testez son installation en tapant dans la console la commande 
+                <strong>java -version</strong>. <br /><br />
+                Dans cet exemple, la version 1.8.0_261 est installée.<p>
+            <figure>
+                <img alt="Java SE version" src="{{ asset('images/astucesInfo/java-se-version.jpg') }}"  />
+            </figure>
+                
+            <h4> 2 - Installation du SDK Android</h4> 
+            <p>Téléchargez le SDK Android depuis l'adresse suivante : <a href="https://android-sdk.fr.uptodown.com/windows/telecharger">https://android-sdk.fr.uptodown.com/windows/telecharger</a>
+                <br /><br />
+                Remarque : Il y a encore quelques temps, le SDK s'installait en même temps qu'Android Studio, mais cette fois-ci je n'ai pas réussi.      
+            </p>
+            <figure>
+                <img style="border: #000000 solid 2px" alt="SDK ANdroid download" src="{{ asset('images/astucesInfo/sdkAndroid-download.jpg') }}"  />
+            </figure>
+            <p>Une fois la SDK Android installé, testez son installation en tapant dans la console la commande <strong>adb</strong></p>
+            <figure>
+                <img alt="SDK ANdroid version" src="{{ asset('images/astucesInfo/sdkAndroid-version.jpg') }}"  />
+            </figure>
+            
+            <h4> 3 - Installation de Apache Ant</h4> 
+            <p>Téléchargez Apache ANT depuis l'adresse suivante : <a href="http://ant.apache.org/bindownload.cgi">http://ant.apache.org/bindownload.cgi</a>
+            <br /><br />
+            Une fois la librairie Apache ANT installée, testez son installation en tapant dans la console la commande
+            <strong>ant -version</strong>. L'écran suivant doit s'afficher.
+            </p>
+            <figure>
+                <img alt="Apache ant version" src="{{ asset('images/astucesInfo/ant-version.jpg') }}"  />
+            </figure>
+            <p>Dans l'exemple ci-dessus, la version d'Apache ANT est 1.10.8 .</p>
+            
+            <h4> 4 - Définir les variables d'environnement</h4> 
+            <p>Tous les utilitaires nécessaires à l'utilisation de la plateforme Android avec Cordova sont installées, mais il faut maintenant
+            indiquer à Windows les chemins où se trouvent ces programmes. Pour cela, on va les saisir dans les variables d'environnement.
+            <br /><br />
+            Pour accéder aux variables d'environnement, appuyez simultanément sur les touches WINDOWS+Pause, puis cliquez sur "Paramètres systèmes avancés".
+            La fenêtre suivante s'affiche :
+            <figure>
+                <img alt="accés variables environnement windows" src="{{ asset('images/astucesInfo/prop-systeme-windows.jpg') }}"  />
+            </figure>
+            <p>Cliquez sur le bouton "variables d'environnement". La fênêtre ci-dessous s'affiche :</p>
+            <figure>
+                <img alt="variables environnement windows" src="{{ asset('images/astucesInfo/variables-env-windows.jpg') }}"  />
+            </figure>
+            </p>
+            <h4>Création de la variable d'environnement "JAVA_HOME"</h4>
+            <p>Pour créer une nouvelle variable, cliquez sur "nouveau" (voir capture au-dessus). La fenêtre ci-dessous apparaît.
+                <br /><br />
+                Pour créer la variable "JAVA_HOME", renseignez "JAVA HOME" dans le champs "Nom de la variable", et le chemin. Cliquez sur "OK" upour valider.
+            </p>
+            <figure>
+                <img alt="création variables environnement windows" src="{{ asset('images/astucesInfo/creation-variable-env.jpg') }}"  />
+            </figure>
+            <h4>Création de la variable d'environnement "ANDROID_HOME"</h4>
+            <p>Faite de même pour la variable ANDROID_HOME.<p>
+            <figure>
+                <img alt="création variables environnement windows" src="{{ asset('images/astucesInfo/creation-variable-env2.jpg') }}"  />
+            </figure>
+            <h4>Modification de la variable d'environnement "PATH"</h4>
+            <p>Sélectionnez la variable intitulée "PATH", puis cliquez sur "nouveau".</p>
+            <figure>
+                <img alt="modification variable environnement windows path" src="{{ asset('images/astucesInfo/modification-path-env.jpg') }}"  />
+            </figure>
+            <p>La fénêtre suivante apparait. Pour ajouter un nouveau chemin, sélectionnez une ligne vide comme l'exemple ci-dessous.</p>
+            
+            <figure>
+                <img alt="modification variable environnement windows path" src="{{ asset('images/astucesInfo/modification-path-env2.jpg') }}"  />
+            </figure>
+            <p>Vous devez ajouter les 4 chemins encadrés en rouge :
+            </p>
+            <ul>
+                <li>le chemim Java SE Développement kit suivi du répertoire "\bin"</li>
+                <li>le chemin du SDK Android suivi du répertoire "\tools"</li>
+                <li>le chemin du SDK Android suivi du répertoire "\platform-tools"</li>
+                <li>le chemin de Apache ANT suivi du répertoire "\bin"</li>
+            </ul>
+            <p>Pour finir, valider les chemins en cliquant sur OK. <br /><br />
+            Voilà, vous êtes prêt à développer votre première appli mobile pour Android avec Cordova.<br /><br /><br /><br /></p>   
+            <h2>"Bug" cordova observé avec Cordova 10 et Windows 20H2</h2>
+            <p><strong>Attention:</strong>Lors du lancement du device android ou lors d'une release, j'ai obtenu le message d'erreur ci-dessous :<br /><br />
+                "cordova 
+                android_home=c:\users\chouc\appdata\local\android\sdk
+                java_home=c:\program files\java\jdk1.8.0_271
+                Requirements check failed for JDK 8 ('1.8.*')! Detected version: 15
+                Check your ANDROID_SDK_ROOT / JAVA_HOME / PATH environment variables."<br /><br />
+            </p>
+            <p>Après de longues recherches, j'ai fini par trouver la source du dysfonctionnement. En ouvrant le gestionnaire des logiciels, j'ai remarqué que j'avais deux versions de JDK, une version 8 et 15. 
+                La 15 a été installé avec NetBeans. Après avoir désinstallé la version 15, Cordova a refonctionné normalement et NetBeans fonctionne très bien avec la version 8.<br /><br />
+            </p>
+            <figure>
+                <img alt="bug cordova java" src="{{ asset('images/astucesInfo/java_sdk_install.jpg') }}" />
+            </figure>
+            
+	</div>
+{% endblock %}

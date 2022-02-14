@@ -1,0 +1,132 @@
+@media screen and (max-width: 1190px) {
+    /* vignettes page thème*/
+   #wrapper-blog div.info-theme {
+       height: auto;
+       padding: 0.8rem;
+       width: 90%;
+   }
+   
+   #wrapper-blog div.info-theme a {
+       font-size: 1rem;
+       padding: 0;
+   }
+}
+
+@media screen and (max-width: 800px) {
+    #wrapper header nav #menu-burger, #wrapper-blog header nav #menu-burger {
+        display: flex;
+        align-content: center;
+        align-items: center;
+        width : 100%;
+    }
+    
+    #wrapper header nav ul, #wrapper-blog header nav ul {
+        display: none;
+    }
+
+     #wrapper-blog header nav#nav-blog {
+        margin-left: -5px;
+    }
+
+    #wrapper-blog header nav#nav-blog ul {
+        display: block;
+        margin : auto;
+        padding-right: 25px;
+    }
+    
+    .realisations {
+        margin : 0px;
+        display : flex;
+        flex-direction: column;
+    }
+
+    .rea {
+        width :100%;
+        margin-bottom: 20px;
+    }
+
+    #mes_realisations + p {
+        margin-bottom: 20px;
+    }
+
+    #wrapper header nav ul li, #wrapper-blog {
+        margin-right: 4%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .cvBloc ul li {
+        margin-left: 6%;
+    }  
+}
+
+@media screen and (max-width: 530px) {
+    h2 {
+        font-size: 2.5em;
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+
+    p, label {
+        font-size: 1.4em;
+    }
+
+    form #contact {
+        flex-direction: column;
+
+    }
+
+    form #contact input, form #contact textarea {
+        width: 100%;
+    }
+
+    form #contact #identity, form #contact #message{
+        width : 100%;
+    }
+    
+    h3 {
+        padding-left: 0px;
+        font-size: 1.6em;  
+    }
+
+    h4 {
+        padding-left: 0px;
+        font-size: 1.4em;  
+    }
+
+
+    #wrapper-blog li {
+        font-size: 1.4em;
+    }
+
+    .content div#presentation figure {
+        display : none;
+    }
+
+
+    #roadTrip042019 div#aller div.twinFigure, #roadTrip042019 div#retour div.twinFigure{
+    flex-direction: column;
+    }
+    
+    /* vignettes blog */
+    #wrapper-blog div.vignettes {
+        flex-direction: column;   
+    }
+    
+    #wrapper-blog div.vignettes div.theme {
+        width:100%;
+        margin-bottom: 20px;
+   } 
+
+    footer {
+        flex-direction: column-reverse;
+        height : 66px;
+   }
+
+   footer p {
+        margin-top: 8px;
+   }
+
+}

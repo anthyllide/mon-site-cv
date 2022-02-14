@@ -1,0 +1,35 @@
+home:
+    path: /
+    controller: App\Controller\DefaultController::indexAction
+
+contact:
+    path: /contact
+    controller: App\Controller\ContactController::contactAction
+
+email:
+    path: /contact_success
+    controller: App\Controller\ContactController::successEmailAction
+
+mentions-legales:
+    path: /mentions-legales
+    controller: App\Controller\DefaultController::mentionsAction
+
+blog:
+    path: /blog
+    controller: App\Controller\DefaultController::blogAction
+
+info-astuces:
+    path: /info_astuces
+    controller: App\Controller\BlogController::infoAstucesAction
+
+info-astuces_show:
+    path: /info_astuces/{folder}/{slug}
+    controller: App\Controller\BlogController::infoAstucesShow
+
+impression_3D:
+    path: /impression_3D
+    controller: App\Controller\BlogController::impression3DAction
+
+electromobilite:
+    path: /electromobilite
+    controller: App\Controller\BlogController::electromobiliteAction

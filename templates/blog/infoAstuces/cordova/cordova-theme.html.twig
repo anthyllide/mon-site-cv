@@ -1,0 +1,9 @@
+{% extends "base-blog.html.twig" %}
+{% block content %}
+	<h1>Alexandra Gonzalez, astuce informatique - Liste des thèmes Cordova</h1>
+        <h2>Tutos et astuces : Cordova</h2>
+        <p>Retrouvez sur cette page tous les sujets abordés concernant Cordova.<p>
+        <div class="info-theme" ><a href="{{ path('info-astuces_show', {'folder': 'cordova', 'slug':'device-android'}) }}">Comment utiliser son smartphone Android pour tester ses applis Cordova ?</a></div>
+        <div class="info-theme" ><a href="{{ path('info-astuces_show', {'folder': 'cordova', 'slug':'installation-cordova'}) }}">Comment installer Cordova sous Windows 10 ?</a></div>
+        <div class="info-theme"><a href="{{ path('info-astuces_show', {'folder': 'cordova', 'slug':'signerAPK-cordova'}) }}">Comment publier une application mobile Cordova sur le Play Store ?</a></h2>
+{% endblock %}
